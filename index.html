@@ -8,17 +8,15 @@
   <style>
     body {
       font-family: 'DM Sans', sans-serif;
-      background: #fff8f6;
+      background: linear-gradient(135deg, #fff8f6 0%, #fffef0 100%);
       color: #333;
-      max-width: 760px;
-      margin: 2rem auto;
+      min-height: 100vh;
       padding: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      border-radius: 16px;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
+    /* Hibiscus flowers background */
     body::before {
       content: '';
       position: fixed;
@@ -27,35 +25,27 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(220, 20, 60, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 140, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(220, 20, 60, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 70% 30%, rgba(255, 140, 0, 0.07) 0%, transparent 50%);
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><filter id="shadow"><feGaussianBlur in="SourceGraphic" stdDeviation="2"/></filter></defs><g filter="url(%23shadow)" opacity="0.12"><g><ellipse cx="100" cy="60" rx="35" ry="20" fill="%23ff69b4" transform="rotate(-30 100 60)"/><ellipse cx="100" cy="60" rx="35" ry="20" fill="%23ff69b4" transform="rotate(30 100 60)"/><ellipse cx="100" cy="60" rx="35" ry="20" fill="%23ff69b4" transform="rotate(90 100 60)"/><ellipse cx="100" cy="60" rx="35" ry="20" fill="%23ff69b4" transform="rotate(150 100 60)"/><circle cx="100" cy="60" r="12" fill="%23ffd700"/></g></g><g opacity="0.1"><g><path d="M100 40 Q120 50 110 70 Q100 75 90 70 Q80 50 100 40" fill="%23ff1493"/><path d="M100 40 Q120 50 110 70 Q100 75 90 70 Q80 50 100 40" fill="%235fa8d3" transform="rotate(72 100 60)"/><path d="M100 40 Q120 50 110 70 Q100 75 90 70 Q80 50 100 40" fill="%23ffb6c1" transform="rotate(144 100 60)"/><path d="M100 40 Q120 50 110 70 Q100 75 90 70 Q80 50 100 40" fill="%235fa8d3" transform="rotate(216 100 60)"/><path d="M100 40 Q120 50 110 70 Q100 75 90 70 Q80 50 100 40" fill="%23ffb6c1" transform="rotate(288 100 60)"/><circle cx="100" cy="60" r="8" fill="%23ffd700"/></g></g></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><filter id="shadow"><feGaussianBlur in="SourceGraphic" stdDeviation="2"/></filter></defs><g filter="url(%23shadow)" opacity="0.11"><g><ellipse cx="100" cy="60" rx="35" ry="20" fill="%235fa8d3" transform="rotate(0 100 60)"/><ellipse cx="100" cy="60" rx="35" ry="20" fill="%235fa8d3" transform="rotate(60 100 60)"/><ellipse cx="100" cy="60" rx="35" ry="20" fill="%235fa8d3" transform="rotate(120 100 60)"/><circle cx="100" cy="60" r="12" fill="%23ffd700"/></g></g></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g opacity="0.09"><path d="M100 30 L120 70 L160 80 L130 110 L140 150 L100 130 L60 150 L70 110 L40 80 L80 70 Z" fill="%23ffb6c1"/><circle cx="100" cy="80" r="6" fill="%23ffd700"/></g><g opacity="0.1" transform="translate(80, 120)"><path d="M100 30 L120 70 L160 80 L130 110 L140 150 L100 130 L60 150 L70 110 L40 80 L80 70 Z" fill="%235fa8d3"/><circle cx="100" cy="80" r="6" fill="%23fff"/></g></svg>');
+      background-size: 400px 400px, 500px 500px, 450px 450px;
+      background-position: 0 0, 100px 150px, 200px 50px;
+      background-repeat: repeat;
+      background-attachment: fixed;
       pointer-events: none;
       z-index: 0;
     }
 
-    main, header, .container {
+    .container {
+      max-width: 760px;
+      margin: 2rem auto;
       position: relative;
       z-index: 1;
-    }
-
-    /* Hibiscus flower SVG background pattern */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g opacity="0.05"><path d="M50,30 Q60,40 50,50 Q40,40 50,30" fill="%23dc143c"/><circle cx="50" cy="50" r="8" fill="%23ff8c00"/><path d="M50,20 L55,35 L70,30 L60,40 L70,50 L55,45 L50,60 L45,45 L30,50 L40,40 L30,30 L45,35 Z" fill="%23dc143c"/></g></svg>'),
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g opacity="0.04"><path d="M50,30 Q60,40 50,50 Q40,40 50,30" fill="%23ff8c00"/><circle cx="50" cy="50" r="8" fill="%23dc143c"/><path d="M50,20 L55,35 L70,30 L60,40 L70,50 L55,45 L50,60 L45,45 L30,50 L40,40 L30,30 L45,35 Z" fill="%23ff8c00"/></g></svg>');
-      background-size: 300px 300px, 400px 400px;
-      background-position: 0 0, 100px 100px;
-      background-repeat: repeat;
-      pointer-events: none;
-      z-index: 0;
+      background-color: rgba(255, 250, 205, 0.85);
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
     }
 
     header {
@@ -125,7 +115,7 @@
     }
 
     @media (max-width: 600px) {
-      body {
+      .container {
         margin: 1rem;
         padding: 1.2rem;
       }
@@ -138,42 +128,44 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="headshot.jpg" alt="Lauren Ramirez headshot" class="headshot" />
-    <h1>Lauren Ramirez</h1>
-    <div class="subtitle">Product Manager in Training</div>
-    <div class="contact">
-      Fort Lauderdale, FL · <a href="mailto:lauren.lee.ramirez@gmail.com">lauren.lee.ramirez@gmail.com</a><br/>
-      (516) 205-6622 · <a href="https://www.linkedin.com/in/llaurenramirez" target="_blank">LinkedIn</a>
-    </div>
-    <a href="Lauren%20Ramirez%20Resume.docx" class="btn" download>📄 Download Resume</a>
-    <a href="Lauren%20Ramirez%20Resume.docx" class="btn" target="_blank">🔎 View in Browser</a>
-  </header>
+  <div class="container">
+    <header>
+      <img src="headshot.jpg" alt="Lauren Ramirez headshot" class="headshot" />
+      <h1>Lauren Ramirez</h1>
+      <div class="subtitle">Product Manager in Training</div>
+      <div class="contact">
+        Fort Lauderdale, FL · <a href="mailto:lauren.lee.ramirez@gmail.com">lauren.lee.ramirez@gmail.com</a><br/>
+        (516) 205-6622 · <a href="https://www.linkedin.com/in/llaurenramirez" target="_blank">LinkedIn</a>
+      </div>
+      <a href="Lauren%20Ramirez%20Resume.docx" class="btn" download>📄 Download Resume</a>
+      <a href="Lauren%20Ramirez%20Resume.docx" class="btn" target="_blank">🔎 View in Browser</a>
+    </header>
 
-  <main>
-    <p>Dear Pinterest Team,</p>
+    <main>
+      <p>Dear Pinterest Team,</p>
 
-    <p>
-      I'm applying for the <strong>Product Management Apprenticeship</strong> at Pinterest. I'm an internal auditor at Chewy, and for the last four years I've been doing product work without the title: scoping problems, prioritizing by risk and impact, and building the tools to prove it rather than simply recommending them.
-    </p>
+      <p>
+        I'm applying for the <strong>Product Management Apprenticeship</strong> at Pinterest. I'm an internal auditor at Chewy, and for the last four years I've been doing product work without the title: scoping problems, prioritizing by risk and impact, and building the tools to prove it rather than simply recommending them.
+      </p>
 
-    <p>
-      Two projects show how I approach this work. I designed and led a compliance monitoring pilot that replaced semi-annual, sample-based safety audits across our warehouses with daily, real-time monitoring. It connects HR, training, and Slack data so site leaders are alerted the moment a high-risk safety course lapses, instead of waiting on the next audit cycle. I scoped the first version to the single highest-risk area on purpose, and built the framework so it could extend to equipment training and inventory controls next without a redesign. Separately, I noticed our SOX team's weekly meetings were spent reporting spreadsheet status instead of making decisions, so I built an interactive dashboard that forecasts thirteen weeks of workload, flags capacity risk before it happens, and surfaces which controls are ready to test early. My team now runs its weekly meetings on it. I've also led rollout of a generative AI tool that automated our audit reporting, cutting turnaround time by 80 percent. The harder part of that project wasn't building the tool; it was training my team to trust and adopt it, which is its own product problem.
-    </p>
+      <p>
+        Two projects show how I approach this work. I designed and led a compliance monitoring pilot that replaced semi-annual, sample-based safety audits across our warehouses with daily, real-time monitoring. It connects HR, training, and Slack data so site leaders are alerted the moment a high-risk safety course lapses, instead of waiting on the next audit cycle. I scoped the first version to the single highest-risk area on purpose, and built the framework so it could extend to equipment training and inventory controls next without a redesign. Separately, I noticed our SOX team's weekly meetings were spent reporting spreadsheet status instead of making decisions, so I built an interactive dashboard that forecasts thirteen weeks of workload, flags capacity risk before it happens, and surfaces which controls are ready to test early. My team now runs its weekly meetings on it. I've also led rollout of a generative AI tool that automated our audit reporting, cutting turnaround time by 80 percent. The harder part of that project wasn't building the tool; it was training my team to trust and adopt it, which is its own product problem.
+      </p>
 
-    <p>
-      What connects these projects is the judgment behind them: deciding what to prioritize, how far to scope something, and how to get people who don't report to me to act on what the data shows. That is the discipline I want to sharpen as a PM, under real mentorship and with real stakes.
-    </p>
+      <p>
+        What connects these projects is the judgment behind them: deciding what to prioritize, how far to scope something, and how to get people who don't report to me to act on what the data shows. That is the discipline I want to sharpen as a PM, under real mentorship and with real stakes.
+      </p>
 
-    <p>
-      Pinterest interests me because it is built for the moment before a decision gets made, when someone is still figuring out what they want. I have spent my career improving that same moment for people, just in a different domain, and I want to bring that instinct to a team building it at scale.
-    </p>
+      <p>
+        Pinterest interests me because it is built for the moment before a decision gets made, when someone is still figuring out what they want. I have spent my career improving that same moment for people, just in a different domain, and I want to bring that instinct to a team building it at scale.
+      </p>
 
-    <p>
-      Thank you for considering my application. I would welcome the opportunity to bring my operational judgment, leadership experience, and drive to Pinterest.
-    </p>
+      <p>
+        Thank you for considering my application. I would welcome the opportunity to bring my operational judgment, leadership experience, and drive to Pinterest.
+      </p>
 
-    <p class="signature">Warmly,<br/>Lauren Ramirez</p>
-  </main>
+      <p class="signature">Warmly,<br/>Lauren Ramirez</p>
+    </main>
+  </div>
 </body>
 </html>
